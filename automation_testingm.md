@@ -7,9 +7,10 @@ I chose **Selenium Webdriver** as an an automation testing framework for the web
 
 <h3>Scenario 1: User Registration and Login</h3>
 
-```
+<h4>Happy path - user registration</h4>
 
-public class RegistrationAndLoginTests {
+```
+public class RegistrationTest {
 
     private WebDriver driver;
     private String baseUrl = "https://automationteststore.com/index.php?rt=account/login";
@@ -19,7 +20,7 @@ public class RegistrationAndLoginTests {
     private String address1 = "Radićeva ulica 35";
     private String city = "Zagreb";
     private String zipCode = "10000";
-    private String loginName = "Hannah James";
+    private String loginName = "HannahJames";
     private String password = "FQqJL@7E6t3J";
     private String passwordConfirm = "FQqJL@7E6t3J";
 
@@ -45,7 +46,7 @@ public class RegistrationAndLoginTests {
         Assert.assertTrue(registerSuccess.isDisplayed(), "The registration failed");
     }
 
-    private void register(String firstName, String lastName, String email, String address1, String city, String zipCode, String loginName, String password, String passwordConfirm) {
+    private void register(String firstName, String lastName, String email, String address1, String city, String zipCode, String loginName, String password, String                                     passwordConfirm) {
         WebElement firstNameInput = driver.findElement(By.id("AccountFrm_firstname"));
         WebElement lastNameInput = driver.findElement(By.id("AccountFrm_lastname"));
         WebElement emailInput = driver.findElement(By.id("AccountFrm_email"));
@@ -76,7 +77,67 @@ public class RegistrationAndLoginTests {
         WebElement continueButton = driver.findElement(By.cssSelector("input[title='Continue']"));
         continueButton.click();
     }
+
+        @AfterClass
+        public void tearDownClass() {
+        // Close the WebDriver instance after all tests in the class
+        if (driver != null) {
+        driver.quit();
+        }
+    }
 }
 
+```
+
+
+<h4>Happy path - user login</h4>
 
 ```
+
+public class LoginTest {
+
+    private WebDriver driver;
+    private String baseUrl = "https://automationteststore.com/index.php?rt=account/login";
+    private String loginName = "HannahJames";
+    private String password = "FQqJL@7E6t3J";
+
+
+    @BeforeClass
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver_executable");
+        driver = new ChromeDriver();
+        driver.get(baseUrl);
+    }
+
+    @Test
+    public void testUserLoginWithValidCredentials() {
+        // Perform the login action
+        login(loginName, password);
+
+        // Verify if login was successful
+        WebElement loginSuccess = driver.findElement(By.xpath("//a[text()='My Account']"));
+        Assert.assertTrue(loginSuccess.isDisplayed(), "The login failed");
+    }
+
+    private void login(String loginName, String password) {
+        WebElement loginNameInput = driver.findElement(By.id("loginFrm_loginname"));
+        WebElement passwordInput = driver.findElement(By.id("loginFrm_password"));
+        WebElement loginButton = driver.findElement(By.cssSelector("input[title='Login']"));
+
+        loginNameInput.sendKeys(loginName);
+        passwordInput.sendKeys(password);
+        loginButton.click();
+    }
+
+    @AfterClass
+    public void tearDownClass() {
+        // Close the WebDriver instance after all tests in the class
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
+
+```
+
+
