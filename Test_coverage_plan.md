@@ -22,7 +22,7 @@ Major User Scenarios:
 Tasks:
 - Verify that users can successfully register with valid information.
 - Confirm that users can log in using valid credentials.
-- Test password recovery/reset functionality if applicable.
+- Test password recovery/reset functionality.
   
 **User Interface (UI) and User Experience (UX):**
 
