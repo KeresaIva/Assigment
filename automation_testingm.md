@@ -88,8 +88,6 @@ public class RegistrationTest {
 }
 
 ```
-
-
 <h4>Happy path - user login</h4>
 
 ```
@@ -139,5 +137,54 @@ public class LoginTest {
 }
 
 ```
+
+<h3>Scenario 2: Browsing and Product Selection</h3>
+
+```
+public class ProductCategoryNavigationTest {
+
+    private WebDriver driver;
+    private String baseUrl = "https://automationteststore.com/";
+
+@BeforeClass
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver_executable");
+        driver = new ChromeDriver();
+        driver.get(baseUrl);
+    }
+
+    @Test
+    public void testCategoryNavigation() {
+        // Identify and click on a product Makeup category 
+        WebElement makeupCategory = driver.findElement(By.partialLinkText("Makeup"));
+        makeupCategory.click();
+
+        // Check if the expected text is present on the page
+        String expectedTextMakeup = "All your makeup needs, from foundation to eye shadow in hundreds of different assortments and colors.";
+        Assert.assertTrue(driver.getPageSource().contains(expectedTextMakeup), "Expected text is not present on the Makeup category page.");
+
+        // Navigate back to the main page
+        driver.navigate().back();
+
+         // Identify and click on another product category - Skincare
+        WebElement skincareCategory = driver.findElement(By.linkText("Skincare"));
+        skincareCategory.click();
+
+        // Check if the expected text is present on the page
+        String expectedTextSkincare = " Products from award-winning skin care brands.";
+        Assert.assertTrue(driver.getPageSource().contains(expectedTextSkincare), "Expected text is not present on the Skincare category page.");
+
+        }
+
+     @AfterClass
+     public void tearDown() {
+        // Close the WebDriver instance after all tests in the class
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
+```
+
 
 
