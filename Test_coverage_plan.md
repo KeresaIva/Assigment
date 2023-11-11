@@ -40,7 +40,7 @@ Tasks:
 Tasks:
 - Validate that user information is correctly stored in the database.
 - Verify that password encryption and storage are secure.
-- Confirm accurate display of user details in the user profile (if applicable).
+- Confirm accurate display of user details in the user profile.
   
 **Security:**
 
