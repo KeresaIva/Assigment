@@ -140,6 +140,9 @@ public class LoginTest {
 
 <h3>Scenario 2: Browsing and Product Selection</h3>
 
+
+<h4>Product Category Navigation links</h4>
+
 ```
 public class ProductCategoryNavigationTest {
 
@@ -160,8 +163,8 @@ public class ProductCategoryNavigationTest {
         makeupCategory.click();
 
         // Check if the expected text is present on the page
-        String expectedTextMakeup = "All your makeup needs, from foundation to eye shadow in hundreds of different assortments and colors.";
-        Assert.assertTrue(driver.getPageSource().contains(expectedTextMakeup), "Expected text is not present on the Makeup category page.");
+        String expectedTextMakeup = "All your makeup needs, from foundation to eye shadow in hundreds of different assortments                                      and colors.";
+        Assert.assertTrue(driver.getPageSource().contains(expectedTextMakeup), "Expected text is not present on the Makeup                                                                                     category page.");
 
         // Navigate back to the main page
         driver.navigate().back();
@@ -185,6 +188,50 @@ public class ProductCategoryNavigationTest {
     }
 }
 ```
+<h4>Add to cart</h4>
+
+```
+public class AddToCartTest {
+
+    private WebDriver driver;
+    private String baseUrl = "https://automationteststore.com/";
+
+    @BeforeClass
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "path_to_chromedriver_executable");
+        driver = new ChromeDriver();
+        driver.get(baseUrl);
+    }
+
+    @Test
+    public void testAddToCart() {
+    //Identify and click on a product (selecting first product)
+    WebElement viewButton = driver.findElement(By.xpath("(//*[@class='your-button-class-name'])[2]"));
+    viewButton.click();
+
+    // Identify and click on the "Add to Cart" button
+    WebElement addToCartButton = driver.findElement(By.xpath("//a[@class='cart']"));
+    addToCartButton.click();
+
+    // Verify that the shopping cart page has opened
+    WebElement shoppingCartTitle = driver.findElement(By.xpath("//h1[@class='heading1']//span[@class='maintext']/i[@class='fa      fa-shopping-cart']"));
+    Assert.assertTrue(shoppingCartTitle.isDisplayed(), "Shopping Cart page did not open after adding to cart");
+
+    }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the WebDriver instance after all tests in the class
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}
+    
+    
+
+```
+
 
 
 
