@@ -189,6 +189,9 @@ public class ProductCategoryNavigationTest {
     }
 }
 ```
+
+<h3>Scenario 3: Checkout and Payment</h3>
+
 <h4>Add to cart</h4>
 
 ```
@@ -215,7 +218,7 @@ public class AddToCartTest {
     addToCartButton.click();
 
     // Verify that the shopping cart page has opened
-    WebElement shoppingCartTitle = driver.findElement(By.xpath("//h1[@class='heading1']//span[@class='maintext']/i[@class='fa      fa-shopping-cart']"));
+    WebElement shoppingCartTitle = driver.findElement(By.xpath("//h1[@class='heading1']//span[@class='maintext']/i[@class='fa fa-shopping-cart']"));
     Assert.assertTrue(shoppingCartTitle.isDisplayed(), "Shopping Cart page did not open after adding to cart");
 
     }
