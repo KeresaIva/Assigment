@@ -55,7 +55,7 @@ POST https://automationteststore.com/api/orders
 Invalid Product in Order:
 
 ```
-POST /api/orders
+POST https://automationteststore.com/api/orders
 {
   "user_id": "user123",
   "products": [
@@ -102,7 +102,7 @@ POST https://automationteststore.com/api/register
 Updating user profile 
 
 ```
-PUT https://example.com/api/users/user123
+PUT https://automationteststore.com/api/users/user123
 {
   "username": "updated_user",
   "email": "updated_user@example.com"
