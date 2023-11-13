@@ -5,7 +5,6 @@ Please note that only some of the tasks in scenarios from test coverage plan wer
 
 <br/>
 
-
 <h3>Scenario 1: User Registration and Login</h3>
 
 <h4>Happy path - user registration</h4>
@@ -138,6 +137,7 @@ public class LoginTest {
 }
 
 ```
+<br/>
 
 <h3>Scenario 2: Browsing and Product Selection</h3>
 
@@ -189,6 +189,8 @@ public class ProductCategoryNavigationTest {
     }
 }
 ```
+<br/>
+
 
 <h3>Scenario 3: Checkout and Payment</h3>
 
