@@ -4,8 +4,8 @@
 
 Major User Scenarios:
 
-1. [Browsing and Product Selection](#browsing-heading)
-2. [User Registration and Login](#userRegistration-heading)
+1. [User Registration and Login](#userRegistration-heading)
+2. [Browsing and Product Selection](#browsing-heading)
 3. [Checkout and Payment](#checkout-heading)
 
 <br/>
