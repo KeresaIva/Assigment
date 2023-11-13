@@ -1,6 +1,7 @@
 <h1> Automation test cases </h1>	
 
-I chose **Selenium Webdriver** as an an automation testing framework for the website
+I chose **Selenium Webdriver** as an an automation testing framework for the website. 
+Please note that only some of the tasks in scenarios from test coverage plan were automated.
 
 <br/>
 
