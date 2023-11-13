@@ -1,6 +1,6 @@
 <h1> Test coverage plan </h1>	
 
-<p>I identified key user scenarios, followed by a detailed approach for testing each scenario. Here's a test coverage plan based on three major user scenarios.</p>
+<p>I identified key user scenarios, followed by a detailed approach for testing each scenario.</p>
 
 Major User Scenarios:
 
