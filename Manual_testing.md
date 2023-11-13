@@ -4,7 +4,7 @@
 
 - User experience is highly subjective and involves emotional and psychological factors. Manual testing allows to simulate real user interactions, providing valuable insights into how users perceive and feel about the interface. Testers can identify nuances in design, aesthetics, and overall usability that automated tools may not capture.
 
-- Manual testing enables testers to assess the accessibility of the interface for users with disabilities, ensuring that the website complies with accessibility standards (e.g., WCAG). They can check the readability, color contrast, and navigation flow to enhance the overall user experience.
+- Manual testing enables testers to assess the accessibility of the interface for users with disabilities, ensuring that the website complies with accessibility standards. They can check the readability, color contrast, and navigation flow to enhance the overall user experience.
 
 - Direct human observation and feedback. Testers can provide qualitative insights, suggestions, and recommendations based on their experience, contributing to the continuous improvement of the UI and UX. Collaboration between testers, designers, and developers is facilitated, leading to a more holistic approach to enhancing the user interface.
 
