@@ -5,7 +5,7 @@ List of products
   - check if there are correct info (name, description, price..) 
 
 ```
-GET /api/products
+GET https://automationteststore.com/api/products
 ```
 
 Filtering by category
