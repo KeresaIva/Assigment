@@ -1,5 +1,5 @@
 
-
+<h3>Product Listings API Endpoint:</h3>
 
 List of products 
   - check if there are correct info (name, description, price..) 
@@ -15,7 +15,7 @@ GET https://automationteststore.com/api/products?category=fragrance
 ```
 
 Sorting
-  - Test sorting options (Date Old > New, Price Low > High, Name A - Z) and verify that the order is correct in the response
+  - test sorting options (Date Old > New, Price Low > High, Name A - Z) and verify that the order is correct in the response
 
 ```
 GET https://automationteststore.com/api/products?sort=price_desc
@@ -37,8 +37,10 @@ POST https://automationteststore.com/api/orders
 }
 ```
 
-Placing order 
-  - testing if it is possible to place a new order
+<h3>Placing order </h3>
+
+Placing new order
+  - test placing new order 
 
 ```
 POST https://automationteststore.com/api/orders
@@ -50,12 +52,19 @@ POST https://automationteststore.com/api/orders
   ]
 }
 ```
-Authentication Check:
+Invalid Product in Order:
 
-  - test with an unauthenticated request and ensure it is denied.
+```
+POST /api/orders
+{
+  "user_id": "user123",
+  "products": [
+    {"product_id": "invalid_product_id", "quantity": 1}
+  ]
+}
+```
 
-
-I assumed that there is also a database that I can access through postman and these would be some of the text cases: 
+<h4>User registration</h4>
 
 Successful User Registration:
 
@@ -79,6 +88,17 @@ POST https://automationteststore.com/api/register
 }
 ```
 
+Input Validation (invalid email format)
+
+```
+POST https://automationteststore.com/api/register
+{
+  "username": "user1",
+  "email": "user1mail",
+  "password": "SecureP@ssword123"
+}
+```
+
 Updating user profile 
 
 ```
@@ -88,3 +108,9 @@ PUT https://example.com/api/users/user123
   "email": "updated_user@example.com"
 }
 ```
+
+
+
+Authentication Check:
+
+  - test with an unauthenticated request and ensure it is denied.
