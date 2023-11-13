@@ -1,4 +1,5 @@
-I assumed that there is also a database that I can access through postman
+
+
 
 List of products 
   - check if there are correct info (name, description, price..) 
@@ -59,7 +60,7 @@ I assumed that there is also a database that I can access through postman and th
 Successful User Registration:
 
 ```
-POST https://example.com/api/register
+POST https://automationteststore.com/api/register
 {
   "username": "user1",
   "email": "user1@gmail.com",
@@ -70,10 +71,20 @@ POST https://example.com/api/register
 Attempting to register with an existing email
 
 ```
-POST https://example.com/api/register
+POST https://automationteststore.com/api/register
 {
   "username": "user1",
   "email": "user1@gmail.com",
   "password": "SecureP@ssword123"
+}
+```
+
+Updating user profile 
+
+```
+PUT https://example.com/api/users/user123
+{
+  "username": "updated_user",
+  "email": "updated_user@example.com"
 }
 ```
