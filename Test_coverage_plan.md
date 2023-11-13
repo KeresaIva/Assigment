@@ -54,7 +54,8 @@ Tasks:
 <em>Ensure that only valid and unique users can register.</em>
 
 Tasks:
- -Test registration with invalid or duplicate email addresses.
+
+- Test registration with invalid or duplicate email addresses.
 - Verify the validation of password complexity requirements.
 - Confirm that the registration form includes necessary fields.
   
